@@ -1,0 +1,109 @@
+# ============================================
+# DIABETES PREDICTION API - EJEMPLOS DE USO
+# ============================================
+
+# 1. Verificar que la API está corriendo
+curl http://127.0.0.1:8000/
+
+# 2. Health check - verificar estado del modelo
+curl http://127.0.0.1:8000/health
+
+# 3. Predicción individual - Paciente con riesgo ALTO
+curl -X POST http://127.0.0.1:8000/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "preg": 6,
+    "plas": 148,
+    "pres": 72,
+    "skin": 35,
+    "insu": 0,
+    "mass": 33.6,
+    "pedi": 0.627,
+    "age": 50
+  }'
+
+# 4. Predicción individual - Paciente con riesgo BAJO
+curl -X POST http://127.0.0.1:8000/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "preg": 1,
+    "plas": 85,
+    "pres": 66,
+    "skin": 29,
+    "insu": 0,
+    "mass": 26.6,
+    "pedi": 0.351,
+    "age": 31
+  }'
+
+# 5. Predicción por lotes - Múltiples pacientes
+curl -X POST http://127.0.0.1:8000/predict/batch \
+  -H "Content-Type: application/json" \
+  -d '[
+    {
+      "preg": 6,
+      "plas": 148,
+      "pres": 72,
+      "skin": 35,
+      "insu": 0,
+      "mass": 33.6,
+      "pedi": 0.627,
+      "age": 50
+    },
+    {
+      "preg": 1,
+      "plas": 85,
+      "pres": 66,
+      "skin": 29,
+      "insu": 0,
+      "mass": 26.6,
+      "pedi": 0.351,
+      "age": 31
+    },
+    {
+      "preg": 8,
+      "plas": 183,
+      "pres": 64,
+      "skin": 0,
+      "insu": 0,
+      "mass": 23.3,
+      "pedi": 0.672,
+      "age": 32
+    }
+  ]'
+
+# 6. Ejemplo con valores personalizados
+curl -X POST http://127.0.0.1:8000/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "preg": 2,
+    "plas": 120,
+    "pres": 70,
+    "skin": 30,
+    "insu": 100,
+    "mass": 28.5,
+    "pedi": 0.5,
+    "age": 35
+  }'
+
+# ============================================
+# DESCRIPCIÓN DE LOS CAMPOS
+# ============================================
+# preg: Número de embarazos (0-20)
+# plas: Glucosa en plasma mg/dL (0-300)
+# pres: Presión arterial diastólica mm Hg (0-200)
+# skin: Grosor pliegue cutáneo mm (0-100)
+# insu: Insulina sérica mu U/ml (0-900)
+# mass: Índice de masa corporal kg/m² (0-70)
+# pedi: Función de pedigrí de diabetes (0-3)
+# age: Edad en años (21-120)
+
+# ============================================
+# RESPUESTA ESPERADA
+# ============================================
+# {
+#   "prediction": "tested_positive" o "tested_negative",
+#   "probability_negative": 0.2345,
+#   "probability_positive": 0.7655,
+#   "confidence": 0.7655
+# }
