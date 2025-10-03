@@ -107,3 +107,44 @@ curl -X POST http://127.0.0.1:8000/predict \
 #   "probability_positive": 0.7655,
 #   "confidence": 0.7655
 # }
+
+
+
+curl -X POST "http://127.0.0.1:8000/predict" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "preg": 6,
+    "plas": 148,
+    "pres": 72,
+    "skin": 35,
+    "insu": 0,
+    "mass": 33.6,
+    "pedi": 0.627,
+    "age": 50
+  }'
+
+
+  curl -X POST "http://127.0.0.1:8000/predict/batch" \
+  -H "Content-Type: application/json" \
+  -d '[
+  {
+    "preg": 6,
+    "plas": 148,
+    "pres": 72,
+    "skin": 35,
+    "insu": 0,
+    "mass": 33.6,
+    "pedi": 0.627,
+    "age": 50
+  },
+  {
+    "preg": 1,
+    "plas": 85,
+    "pres": 66,
+    "skin": 29,
+    "insu": 0,
+    "mass": 26.6,
+    "pedi": 0.351,
+    "age": 31
+  }
+]'

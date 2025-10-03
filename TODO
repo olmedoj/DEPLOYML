@@ -1,0 +1,7 @@
+1. Preparar el modelo para futuros entrenamientos
+2. Preparar para producción 
+3. Decidir el ambiente de Cloud para despliegue
+4. Realizar pruebas
+5. Desplegar la API
+6. Documentar la API
+7. CD/CI para MLOps
