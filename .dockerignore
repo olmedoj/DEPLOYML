@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing and development files
+test.py
+test2.py
+test3.py
+ejemplo1.py
+ejemplo2.py
+simulacion.py
+model_pipeline.py
+TODO
+
+# Documentation
+README.md
+template.txt
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Other model formats not needed
+*.ubj
+*.h5
+*.pt
+*.pth
