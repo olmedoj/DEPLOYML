@@ -5,3 +5,31 @@
 5. Desplegar la API
 6. Documentar la API
 7. CD/CI para MLOps
+
+
+
+curl -X POST https://deployml-841885018217.us-central1.run.app/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "preg": 6,
+    "plas": 148,
+    "pres": 72,
+    "skin": 35,
+    "insu": 0,
+    "mass": 33.6,
+    "pedi": 0.627,
+    "age": 50
+  }'
+
+
+  
+curl -X POST https://deployml-841885018217.us-central1.run.app/predict \
+  -H "Content-Type: application/json" \
+  -d '{"preg": 1, "plas": 85, "pres": 66, "skin": 29, "insu": 0, "mass": 26.6, "pedi": 0.351, "age": 31}'
+
+
+curl https://deployml-841885018217.us-central1.run.app/health
+
+curl https://deployml-841885018217.us-central1.run.app/
+
+curl https://deployml-841885018217.us-central1.run.app/docs

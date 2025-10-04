@@ -21,4 +21,4 @@ COPY label_encoder_diabetes.pkl .
 EXPOSE 8080
 
 # Run the application
-CMD ["python", "api.py"]
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8080"]
