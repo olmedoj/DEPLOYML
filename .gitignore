@@ -12,7 +12,6 @@ ENV/
 env/
 
 # Model files (large binary files)
-*.pkl
 *.ubj
 *.h5
 *.pt
