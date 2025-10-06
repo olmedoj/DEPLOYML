@@ -39,7 +39,7 @@ Realiza una predicción de calidad
 
 ### Predicción
 ```bash
-curl -X POST https://olmedoj.pythonanywhere.com/predict \
+curl -X POST https://TU-USUARIO.pythonanywhere.com/predict \
   -H "Content-Type: application/json" \
   -d '{
     "fixed_acidity": 7.4,
