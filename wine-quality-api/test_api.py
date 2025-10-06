@@ -2,7 +2,7 @@ import requests
 import json
 
 def test_api():
-    base_url = "https://TU-USUARIO.pythonanywhere.com"
+    base_url = "https://olmedoj.pythonanywhere.com"
     
     print("🧪 Iniciando pruebas de la API...")
     
